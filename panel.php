@@ -3,7 +3,7 @@ require_once __DIR__ . '/vendor/helpers.php';
 requireAdmin();
 
 // Обработка AJAX-запросов
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'update_booking_status') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_booking_status') {
     header('Content-Type: application/json');
     $pdo = getPDO();
     $id = (int)($_POST['id'] ?? 0);
