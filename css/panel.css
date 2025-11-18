@@ -1,0 +1,709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    background-color: #F2DDC6;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    color: #4A1301;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    color: #4A1301;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.main-menu-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-menu {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: fit-content;
+}
+
+.menu-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px 24px;
+    width: 240px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card h2 {
+    margin: 0 0 16px;
+    font-size: 1.5em;
+    color: #4A1301;
+    font-family: 'Jost', sans-serif;
+}
+
+.menu-card .count {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #4A1301;
+}
+
+.back-btn {
+    display: inline-block;
+    margin: 10px 0 20px;
+    padding: 8px 16px;
+    background: #4A1301;
+    color: #F2DDC6;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Jost', sans-serif;
+}
+
+.back-btn:hover {
+    opacity: 0.9;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #F2DDC6;
+}
+
+th {
+    background: white;
+    color: #4A1301;
+    font-weight: bold;
+}
+
+.admin-rooms-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.form-section,
+.rooms-list-section {
+    flex: 1 1 300px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #F2DDC6;
+    min-height: auto !important;
+    align-self: flex-start;
+}
+
+.rooms-list-section h2 {
+    margin-bottom: 16px;
+    color: #4A1301;
+    font-family: 'Jost', sans-serif;
+}
+
+.rooms {
+    list-style: none;
+    padding: 0;
+}
+
+.rooms li {
+    padding: 16px;
+    margin: 12px 0;
+    background: #fff;
+    border: 2px solid #F2DDC6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.room-info {
+    flex: 1;
+}
+
+.room-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.room-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.edit-btn {
+    color: #4A1301;
+}
+
+.edit-btn:hover {
+    color: #581a05ff;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    color: #c82333;
+    transform: translateY(-2px);
+}
+
+.images-preview img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #F2DDC6;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.price {
+    color: #4A1301;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 2px solid #F2DDC6;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: #4A1301;
+}
+
+.form-section textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Jost', sans-serif;
+}
+
+.add-btn,
+.update-btn {
+    background-color: #4A1301;
+    color: #FDF4E3;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.add-btn:hover,
+.update-btn:hover {
+    color: #4A1301;
+    background-color: #FDF4E3;
+}
+
+.message {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-select {
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #F2DDC6;
+    border-radius: 6px;
+    color: #4A1301;
+    background-color: white;
+}
+
+.btn-custom {
+    background-color: #4A1301;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #FDF4E3;
+    outline: none;
+    border: none;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    color: #4A1301;
+    background-color: #FDF4E3;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-menu i {
+    font-size: 50px;
+    color: #4A1301;
+}
+
+.main-menu i:hover {
+    color: rgba(119, 30, 0, 1);
+}
+
+.current-image-preview {
+    margin: 8px 0 16px;
+}
+
+.current-image-preview img {
+    max-width: 150px;
+    max-height: 100px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+/* Стили для чекбоксов — две колонки через Grid */
+.amenities-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0 20px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #F2DDC6;
+    border-radius: 10px;
+}
+
+.amenities-checkboxes label {
+    display: flex;
+    align-items: center;
+    /* Вертикальное выравнивание по центру */
+    justify-content: flex-start;
+    /* Текст слева от чекбокса */
+    gap: 10px;
+    /* Пространство между чекбоксом и текстом */
+    font-size: 0.95em;
+    color: #4A1301;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    line-height: 1.3;
+    /* Улучшает читаемость */
+}
+
+.amenities-checkboxes label:hover {
+    background-color: #F2DDC6;
+}
+
+.amenities-checkboxes input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #4A1301;
+    cursor: pointer;
+    margin: 0;
+    /* убираем браузерные отступы */
+    flex-shrink: 0;
+    /* чекбокс не сжимается */
+}
+
+.capacity {
+    display: block;
+    color: #4A1301;
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+/* Кастомный выбор файла */
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    padding: 8px;
+    border: 2px solid #F2DDC6;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+
+.custom-file-upload:hover {
+    border-color: #4A1301;
+}
+
+/* Скрываем настоящий input */
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(100%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Стилизованная кнопка */
+.custom-file-button {
+    background-color: #4A1301;
+    color: #FDF4E3;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.custom-file-button:hover {
+    background-color: #581a05;
+    transform: translateY(-1px);
+}
+
+.custom-file-button:active {
+    transform: translateY(0);
+}
+
+/* Отображение имени файла */
+.file-name {
+    flex: 1;
+    font-size: 0.9em;
+    color: #4A1301;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+/* Стили для таблицы бронирований */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #F2DDC6;
+}
+
+table th {
+    background-color: #4A1301;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF4E3;
+}
+
+table tr:hover {
+    background-color: #F2DDC6;
+    transition: background-color 0.3s;
+}
+
+.status-select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: #4A1301;
+    box-shadow: 0 0 0 2px rgba(74, 19, 1, 0.2);
+}
+
+.contact-info {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #4A1301;
+}
+
+.contact-info i {
+    color: #4A1301;
+    margin-right: 5px;
+    width: 16px;
+    text-align: center;
+}
+
+/* Основной контейнер отзывов */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Карточка отзыва с фоном */
+.review-card {
+    background: #FFF9F5;
+    /* Теплый бежевый фон */
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 16px rgba(74, 19, 1, 0.08);
+    border: 2px solid #F2DDC6;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(74, 19, 1, 0.12);
+    border-color: #F2DDC6;
+}
+
+/* Градиентный акцент сверху карточки */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #4A1301, #6B2A0C);
+}
+
+/* Заголовок отзыва */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #E0CAB4;
+}
+
+.review-author {
+    flex: 1;
+}
+
+.review-author h3 {
+    color: #4A1301;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+}
+
+.review-email {
+    color: #4A1301;
+    font-size: 0.95em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+/* Рейтинг со звездами */
+.review-rating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    min-width: 120px;
+    justify-content: flex-end;
+}
+
+.review-rating .fa-solid.fa-star {
+    color: #4A1301;
+    /* Золотой для заполненных звезд */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.review-rating .fa-regular.fa-star {
+    color: #4A1301;
+    /* Светло-бежевый для пустых звезд */
+}
+
+/* Контент отзыва */
+.review-content {
+    line-height: 1.7;
+    color: #4A1301;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    padding-left: 5px;
+    border-left: 3px solid #F2DDC6;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+/* Футер отзыва */
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 12px;
+    border-top: 1px solid #FDF4E3;
+}
+
+.review-date {
+    color: #4A1301;
+    font-size: 0.9em;
+    font-style: italic;
+    background-color: #F2DDC6;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+/* Кнопка удаления */
+.review-card .delete-btn {
+    color: #dc3545;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+.review-card .delete-btn:hover {
+    color: #c82333;
+    background: rgba(220, 53, 69, 0.08);
+    transform: scale(1.05);
+}
+
+.review-card .delete-btn i {
+    font-size: 1.1em;
+}
+
+/* Анимация появления карточек */
+.reviews-list .review-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reviews-list .review-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reviews-list .review-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.reviews-list .review-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.reviews-list .review-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.reviews-list .review-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .review-card {
+        padding: 20px 16px;
+    }
+
+    .review-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .review-rating {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .review-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .review-card::before {
+        height: 4px;
+    }
+}
